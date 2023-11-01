@@ -21,10 +21,15 @@ The code implements functionality for adding, editing, and deleting recipes, and
 Pre-Designed Pages
 
 ℹ️ Home/About Page
+
 📄 Recipes Page
+
 📝 Recipe Single Page
+
 📄 Blog Page
+
 📞 Connect with me
+
 
 Installation
 Local development 🔧
