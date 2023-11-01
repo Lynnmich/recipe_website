@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <br/><br/><br/><br/>
+  <h2>You searched for: {{ searched }}</h2>
+  <br/>
+
+  {% if recipes %}
+  {% for recipe in recipes %}
+    <a href="{{ url_for('recipe', id=recipe.id)}}">{{ recipe.title }}</a><br/>
+  {% endfor %}
+
+  {% else %}
+  <br/>
+  Sorry, your search term: {{ searched }} did not yield any results..
+  {% endif %}
+
+{% endblock %}

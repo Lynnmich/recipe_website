@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<style>
+    /* Add your CSS styles here */
+    .alert {
+        padding: 10px;
+        margin: 20px;
+        border: 1px solid #ccc;
+        background-color: #f8d7da;
+        color: #721c24;
+        border-radius: 5px;
+    }
+
+    h3 {
+        font-size: 24px;
+        color: #333;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #666;
+    }
+
+    button {
+        background-color: #d7cba1;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #b1ecbe;
+    }
+</style>
+
+<!-- Page 1 -->
+<br/>
+<div id="page1" style=" text-align: center;">
+    <h3>FOREWORD</h3>
+    <p>
+        The double burden of malnutrition is a serious public health and economicproblem that is affecting
+        Kenya today. Malnutrition exists as overnutrition and undernutrition. One of the forms of undernutrition is
+        manifested as micronutrient deficiencies such as iron deficiency anaemia affecting 26% of pregnant women
+        and zinc deficiency with an estimated 70% of the population being deficient (KNMS, 2011). Besides, 26% of
+        children below five years are stunted (KDHS, 2014) and this has a long term effect on cognative development.
+        Consumption of poor diets and disease have been identified as the immediate causes of undernutrition and
+        therefore promotion of sustainable recipes would empower households to make informed food choices.
+        Two of the objectives in the Food and Nutrition Security Policy are; to achieve adequate nutrition for optimum
+        health of all Kenyans and to increase the quality and quantity of food available, accessible and affordable to
+        all Kenyans at all times (FNSP, 2010).
+    </p> 
+    <br/>
+    <p>
+        The National Nutrition Action Planfurther outlines objectives to ensure
+        good nutrition for optimum health of all Kenyans (NNAP, 2012-2017). One of which is to strengthen evidenced
+        based decision making through operations research. To actualise this objective, Kenya has updated the
+        National Food Composition Tables that highlights the nutrient profiles of different foods for a priority list
+        of nutrients. The foods have been sampled from across the country. Further to this, the country is in the
+        process of adapting food based approaches that takes into account diversity of lifestyles, cultures, public
+        health priorities and variations on food patterns.
+    </p>
+    <br/>
+    <p>
+        Encouraging dietary diversity by first appreciating local recipes is a key step in enhancing good nutrition at
+        community level. This recipe book is work that has taken into account diversity of lifestyles, cultures and food
+        patterns of the various communities in Kenya. The recipes have been sampled from across the country and
+        representatives from the different people groups provided guidance in the development of these recipes.
+        This recipe book forms an initial step in promotion of good nutrition at community level by promoting and
+        enhancing of local recipes. The book will be an important reference tool for teaching institutions.
+    </p>
+    <br/><br/>
+    <button onclick="showPage(2)">Next</button>
+</div>
+
+<!-- Page 2 -->
+<br/>
+<div id="page2" style="display: none; text-align: center;">
+    <h3>ACKNOWLEDGEMENTS</h3>
+    <br/>
+    <p>
+        The Nutrition and Dietetics Unit,Ministry of Health, would like to sincerely thank each and every individual
+        and institution that made the development of this recipe book a success. The dedicated support of the
+        government of Kenya through the Ministry of Health (MOH) and that of UN-FAO, who funded this work, is
+        highly appreciated.
+    </p>
+    <br/>
+    <p>
+        In particular, special thanks go to the FAO technical team led by the Lead Technical Officer and Chair of
+        INFOODS Ruth Charrondiere together with the entire FAO Rome technical team who worked tirelessly to
+        ensure the recipe work was delivered on time and in full. In this regard, we acknowledge Anna Vincent, FAO
+        Rome, and Fernanda Grande, FAO Rome, for their matchless sacrifice and dedication to this work. In addition,
+        this work would not have been possible without the keen support from the entire FAO Kenya team led by
+        Angela Kimani, the Head of Nutrition Unit.
+    </p>
+    <p>
+        The dedicated efforts by the technical team at the MOH lead by John Mwai are deeply appreciated. In
+        addition, we sincerely thank all the members of the steering committee who put much effort to support
+        the recipes work including the sub-committee members in the recipes working group for their time, input
+        and technical support throughout the entire recipe development process. We would like to acknowledge
+        institutions and ministries that were represented by steering committee members: FAO Kenya, FAO Rome,
+        Ministry of Agriculture and Irrigation, formerly Ministry of Agriculture, Livestock and Fisheries (MOALF),
+        Kenya Agricultural and Livestock Research Organization (KALRO), Kenya Medical Research Institute (KEMRI),
+        Kenyatta University, Kisii University and International Livestock Research Institute (ILRI).
+        We deeply thank the Director of the International Hotel and Tourism Institute (IHTI), Ambassador Mwakai Sio
+        for hosting the recipe development work most hospitably.
+    </p>
+    <br/><br/>
+    <button onclick="showPage(1)">Previous</button>
+    <button onclick="showPage(3)">Next</button>
+</div>
+
+<!-- Page 3 -->
+<br/>
+<div id="page3" style="display: none; text-align: center;">
+    <h3>A Recipe Book of Common Mixed Dishes with Nutrient Values;As Prepared by Communities.</h3>
+    <br/>
+        <p>The intention of this exercise was to document major recipes that are most commonly consumed among
+        Kenyan communities. This necessitated a desk review of previous work done on recipes by different
+        institutions including Ministry of Agriculture, Livestock and Fisheries, Kenya Agricultural and Livestock
+        Research Organization and Kenyatta University. Other sources of recipe information included Ministry of
+        Health through County Nutrition Coordinators (CNCs), individual work done by FCT Steering committee
+        members and contributions from community focus groups discussions.
+        </p>
+        <br/>
+        <p>
+        A criteria for including and/or excluding recipes was defined to guide the recipe selection process. As such,
+        recipes were included based on ingredient availability as analysed in the revised KFCT, relevance to current
+        utilization at community level, method of preparation, physical availability of ingredients, and ingredients
+        uniqueness in form; for instance dry versus fresh or whole versus refined. Recipes that were modified in
+        nature and those whose method of preparation altered the original state of ingredients as analysed in the
+        KFCT (for example, recipes with a fermentation step or dried ingredients) were excluded.
+        </p>
+        <br/>
+        <p>
+        Based on the aforementioned inclusion and exclusion criteria, most of the recipes that qualified into the
+        mandatory list were picked from the local communities as provided by the CNCs of the Ministry of Health
+        and County Nutrition Officials of the Kenya Agricultural and Livestock Research Organization. These were
+        later verified by the focus groups drawn from Kenyan communities. In addition, the mandatory list of recipes
+        was then agreed upon by stakeholders through a thorough consensus building process that involved recipe
+        validation with steering committee members. In order to preserve the validity of the recipes to the local
+        communities.</p>
+        <br/><br/>
+    <button onclick="showPage(2)">Previous</button>
+</div>
+
+<script>
+function showPage(pageNumber) {
+    // Hide all pages
+    for (let i = 1; i <= 3; i++) {
+        const page = document.getElementById("page" + i);
+        page.style.display = "none";
+    }
+
+    // Show the selected page
+    const currentPage = document.getElementById("page" + pageNumber);
+    currentPage.style.display = "block";
+}
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html'%} 
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <br/><br/>
+            <h3>Categories</h3>
+            <div class="page-explainer">
+                <p>All categories are listed below.</p><br/>
+            </div>
+            <br/>
+        </div>
+    </div>
+<br/><br/>
+
+{% for category in categories %}
+<div class="shadow p-3 mb-5 bg-body rounded" style="background: #f4f7c5;" >
+    <h2 style="font-family: Papyrus;">{{ category.name }}</h2><br/>
+    <a href="{{ url_for('recipe', id=recipe.id) }}" "javascript:void(0);" onclick="toggleContent('recipe{{ recipe.id }}')" class=".my-button" style="border: none; display: inline-block; font-size: 16px; padding: 10px 20px; background-color: #223221; color: #f1f6f7;">Read More</a>
+    <br/><br/> 
+</div>
+{% endfor %}
+
+
+    {{ pagination.info }} {{ pagination.links }}
+</div>
+{% endblock %}

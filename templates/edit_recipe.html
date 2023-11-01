@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-warning alert-dismissable fade show" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+<h3>Edit Recipes</h3>
+<br/>
+
+<div class="shadow p-3 mb-5 bg-body rounded" >
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        {{ form.title.label(class="form-label") }}
+
+        {{ form.title(class="form-control") }}
+        <br/>
+
+        {{ form.subtitle.label(class="form-label") }}
+
+        {{ form.subtitle(class="form-control") }}
+        <br/>
+
+        {{ form.slug.label(class="form-label") }}
+
+        {{ form.slug(class="form-control") }}
+        <br/>
+        
+        {{ form.ingredients.label(class="form-label") }}
+
+        {{ form.ingredients(class="form-control") }}
+        <br/>
+
+        {{ form.instructions.label(class="form-label") }}
+
+        {{ form.instructions(class="form-control") }}
+        <br/>
+
+        {{ form.preparation_time.label(class="form-label") }}
+
+        {{ form.preparation_time(class="form-control") }}
+        <br/>
+
+        {{ form.cooking_time.label(class="form-label") }}
+
+        {{ form.cooking_time(class="form-control") }}
+        <br/>
+
+        {{ form.servings.label(class="form-label") }}
+
+        {{ form.servings(class="form-control", rows="10") }}
+        <br/>
+
+        {{ form.energy.label(class="form-label") }}
+
+        {{ form.energy(class="form-control") }}
+        <br/>
+
+        {{ form.protein.label(class="form-label") }}
+
+        {{ form.protein(class="form-control") }}
+        <br/>
+
+        {{ form.fat.label(class="form-label") }}
+
+        {{ form.fat(class="form-control") }}
+        <br/>
+
+        {{ form.fiber.label(class="form-label") }}
+
+        {{ form.fiber(class="form-control") }}
+        <br/>
+
+        {{ form.vitamin_a.label(class="form-label") }}
+
+        {{ form.vitamin_a(class="form-control") }}
+        <br/>
+
+        {{ form.iron.label(class="form-label") }}
+
+        {{ form.iron(class="form-control") }}
+        <br/>
+
+        {{ form.zinc.label(class="form-label") }}
+
+        {{ form.zinc(class="form-control") }}
+        <br/>
+
+        {{ form.carbohydrate.label(class="form-label") }}
+
+        {{ form.carbohydrate(class="form-control") }}
+        <br/>
+
+        {{ form.submit(class="btn btn-secondary") }}
+
+    </form>
+    {{ ckeditor.load() }}
+    {{ ckeditor.config(name='name') }}
+    
+</div>
+
+
+{% endblock %}

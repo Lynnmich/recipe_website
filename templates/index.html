@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,200;1,300;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> Kenyan Food Recipes</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo" style="font-family: Papyrus;">Kenyan Food Recipes</div>
+        <div class="nav-bar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="{{ url_for('info', _external=True) }}">Info</a></li>
+                <li><a href="{{ url_for('recipes', _external=True) }}">Recipes</a></li>
+                {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('logout', _external=True)}}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                <a class="nav-link" href="{{url_for('login', _external=True)}}">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('add_admin', _external=True)}}">Add Admin</a>
+                </li>
+                {% endif %}
+                <li>      
+                    <form method="POST" action="{{ url_for('search', _external=True) }}" class="d-flex">
+                    {{ form.hidden_tag() }}
+                    <input class="form-control me-2 rounded-pill" type="search" placeholder="Search for a recipe" aria-label="Search" name="searched" style="height: 40px; width: 180px;"/>
+                    <button class="button rounded-pill" type="submit" style="background-color: #d7cba1; width: 100px; height: 40px; color: darkolivegreen; border: #d7cba1;">Search</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="hero">
+        <div class="content">
+            <h4>Unleash Your Culinary Passion</h4>
+            <h1>Discover Kenya's Taste Sensations</h1>
+            <h3>Elevate Your Cooking Game</h3>
+            <div class="button"><a href="{{ url_for('recipes', _external=True) }}">Start</a></div>
+        </div>
+    </div>
+
+
+    <!----About Section Start---------------------------------->
+    <section id="about" class="about">
+        <h2>About The Book</h2>
+        <div class="main">
+            <img src="/static/images/about.jpg" alt="">
+            <div class="about-text">
+                <p>This book is a detailed account of commonly consumed dishes featuring a diversity of mixed ingredient
+                    recipes from across Kenyan communities. These recipes were selected based on frequency of use and so
+                    the most commonly used recipes are featured. The book was developed side by side with the revised Kenya
+                    Food Composition Tables (KFCT) and so nutrient calculations for mixed recipes featured were drawn from the
+                    revised Kenya Food Composition Tables (KFCT), 2018.
+                    As Food systems are dynamic so are food recipes. The greater the diversity of cultures the greater the diversity
+                    of recipes as is clearly demonstrated in this book. For example, a single food group can be prepared and
+                    eaten in diverse ways by the different people groups as the case in Kenya. 
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-----Recipes Section Start---------------------------------->
+    <div class="categories">
+        <h2>Recipes</h2>
+        <div class="box">
+            <div class="ca-card">
+                <img src="/static/images/porridge.jpg" alt="">
+                <div class="content">
+                    <h3>Porridges</h3>
+                    <p>Kenya is well known for her age-old varieties of porridges. Being a tropical country, grains thrive very well,
+                        and it is no wonder they form part of Kenyan staples. </p>
+                    <button><a href="{{ url_for('recipes', _external=True) }}">Read More</a></button>
+                </div>
+            </div>
+            <div class="ca-card">
+                <img src="/static/images/matoke.jpeg" alt="">
+                <div class="content">
+                    <h3>Root and Banana Dishes</h3>
+                    <p>Kenyan cuisine encompasses the variety of root-based recipes usually mixed with other roots, vegetables
+                        or bananas</p>
+                    <button><a href="{{ url_for('recipes', _external=True) }}">Read More</a></button>
+                </div>
+            </div>
+            <div class="ca-card">
+                <img src="/static/images/rice.jpg" alt="">
+                <div class="content">
+                    <h3>Rice Dishes</h3>
+                    <p>Rice dishes are typical among the Swahili and urban communities. As such, most rice dishes are named in
+                        Kiswahili</p>
+                    <button><a href="{{ url_for('recipes', _external=True) }}">Read More</a></button>
+                </div>
+            </div>
+            <div class="ca-card">
+                <img src="/static/images/meat.jpeg" alt="">
+                <div class="content">
+                    <h3>Meat, Fish & Eggs</h3>
+                    <p>This section features different kinds of meats, fish and egg recipes that are common in Kenya. The various
+                        methods of cooking these proteins are explained</p>
+                    <button><a href="{{ url_for('recipes', _external=True) }}">Read More</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!------------contact section-------------------------->
+    <section class="contact">
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p><strong>Address:</strong> 123 Main Street, city,Country</p>
+            <p><strong>Phone:</strong>1234567890</p>
+            <p><strong>Email:</strong>info@example.com</p>
+        </div>
+    </section>
+<footer>
+    <div class="social-icons">
+        <a href="#" class="social-icon"> <i class="fab fa-facebook"></i> </a>
+        <a href="#" class="social-icon"> <i class="fab fa-twitter"></i> </a>
+        <a href="#" class="social-icon"> <i class="fab fa-instagram"></i> </a>
+    </div>
+    <h5>CopyRight © 2023 By Kenyan Food Recipes </h5>
+</footer>
+</body>
+<style>
+.nav-bar ul{
+    display: flex;
+    list-style: none;
+}
+.nav-bar ul li a{
+    display: block;
+    color: #edffef;
+    font-size: 16px;
+    padding: 8px 25px;
+    transition: .2s;
+    margin: 0 5px;
+    text-decoration: none;
+}
+.nav-bar ul li:hover a{
+    background-color: #f1f6f7;
+    color: #223221;
+    cursor: pointer;
+}
+</style>
+</html>

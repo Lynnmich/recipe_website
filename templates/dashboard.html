@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <br/><br/><h3 style="font-family: Papyrus; text-decoration: underline;">Dashboard</h3>
+  
+
+  <p>Hello, welcome to the dashboard.</p>   
+  <br/>
+
+  <br/>
+  <div class="lists">
+    <div class="recipes">
+      <h2>Recipes</h2>
+      <hr>
+      <br/>
+      <p>Here is the list of the recipes you've added:</p>
+      <br/><br/>
+      <ul>
+        {% for recipe in recipes %}
+          <ul>{{ recipe.title }}</ul>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <br/><br/>
+  <a href="{{ url_for('logout') }}" class="button rounded-pill" style="background: #244122; color: #d7cba1; width: 180px; height: 40px; display: flex; align-items: center; justify-content: center; border: none;">Log Out</a>
+
+{% endblock %}

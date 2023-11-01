@@ -1,0 +1,134 @@
+{% extends 'base.html'%} 
+{% block content %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<div class="container">
+
+    <div> <br/><br/>
+        <h2>{{ recipe.title }}</h2><br/>
+        <h4 style="font-family: Papyrus;">{{ recipe.subtitle }}</h4><br/>
+        <h5 style="font-family: Papyrus;">{{ recipe.slug }}</h5><br/>
+        <!--<h5 style="font-family: Papyrus;">{{ recipe.category }}</h5><br/>-->      
+    </div>
+    <div class="inline-details">
+
+<!-- recipe icons  -->
+<div class="recipe-icons">
+    <!-- single recipe icon  -->
+    <article>
+        <i class="fa fa-clock-o"></i>
+        <h5>Preparation time</h5>
+        <p>{{ recipe.preparation_time }}</p>
+    </article>
+    <!-- single recipe icon  -->
+    <article>
+        <i class="fa fa-clock-o"></i>
+        <h5>Cooking time</h5>
+        <p>{{ recipe.cooking_time }}</p>
+    </article>
+    <!-- single recipe icon  -->
+    <article>
+        <i class="fa fa-user"></i>
+        <h5>Servings</h5>
+        <p>{{ recipe.servings }}</p>
+    </article>
+    <form class="material-icons" action="{{ url_for('upvote', recipe_id=recipe.id)}}" method="POST">
+      <button style="border: none;"><i class="fa fa-thumbs-up" style="font-size:18px; "></i></button> <small>{{recipe.upvotes}}</small>
+</div>
+
+    <div class="paragraph-details ingredients-section">
+        <h4 class="ingredients-title">Ingredients</h4>
+            <ul class="ingredients-list">
+                <p>{{recipe.ingredients | safe }}</p>
+            </ul>
+    </div>
+    <div class="paragraph-details instructions-section">
+        <h4 class="instructions-title">Instructions</h4>
+        <ul class="instructions-text">
+        <p>{{recipe.instructions | safe }}</p>
+        </ul>
+    </div>
+    
+    <div class="nutrient-details">
+        <h4>Nutrients per 100gms</h4>
+        <p>Energy: {{recipe.energy }}</p>
+        <p>Carbohydrate: {{recipe.carbohydrate }}</p>
+        <p>Protein: {{recipe.protein }}</p>
+        <p>Fat: {{recipe.fat }}</p>
+        <p>Fiber: {{recipe.fiber }}</p>
+        <p>Vitamin A: {{recipe.vitamin_a }}</p>
+        <p>Iron: {{recipe.iron }}</p>
+        <p>Zinc: {{recipe.zinc }}</p>
+    </div>
+
+    <br/><br/>
+    <p style="font-family: Papyrus;">Added on: {{ recipe.date_posted }}</p><br/>
+
+</div>
+
+<style>
+.container {
+    text-align: center; /* Center the content within the container */
+  }
+.recipe-icons{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1rem;
+	margin: 2rem 0;
+	text-align: center;
+}
+.recipe-icons i{
+	font-size: 1.5rem;
+	color: var(--primary-500);
+}
+.recipe-icons h5,.recipe-icons p{
+	margin-bottom: 0;
+	font-size: 0.85rem;
+}
+.recipe-icons p {
+	color: var(--grey-600);
+}
+
+
+.ingredients-section {
+    background-color: #fdfcf7ee;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  .ingredients-title {
+    font-size: 24px;
+    color: #333;
+  }
+
+  .ingredients-list {
+    list-style: disc;
+    margin-left: 20px;
+  }
+
+  .ingredients-list-item {
+    margin: 5px 0;
+  }
+
+  /* Style the Instructions section */
+  .instructions-section {
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  .instructions-title {
+    font-size: 24px;
+    color: #333;
+  }
+
+  .instructions-text {
+    font-size: 16px;
+    color: #0f0f0f;
+  }
+</style>
+
+{% endblock %}

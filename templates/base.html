@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Ensuring site works across all devices.-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kenyan Food Recipes</title>
+    <!-- Links to stylesheet libraries-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- My custom stylesheet -->
+    <link rel="stylesheet" href="/static/styles.css" type="text/css">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo" style="font-family: Papyrus;">Kenyan Food Recipes</div>
+        <div class="nav-bar">
+            <ul>
+                <li><a href="{{ url_for('index', _external=True) }}">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="{{ url_for('info', _external=True) }}">Info</a></li>
+                <li><a href="{{ url_for('recipes', _external=True) }}">Recipes</a></li>
+                {% if current_user.is_authenticated %}
+                <li><a href="{{url_for('logout', external=True)}}">Logout</a></li>
+                {% else %}
+                <li><a href="{{ url_for('add_admin', _external=True) }}">Add Admin</a></li>
+                <li><a href="{{ url_for('login', _external=True) }}">LogIn</a></li>
+                </li>
+                {% endif %}
+      
+                {% if current_user.is_authenticated %}
+                <li>
+                    <a href="{{url_for('add_recipe')}}"> Add Recipe</a>
+                </li>
+                {% endif%}
+              
+
+                <li>      
+                    <form method="POST" action="{{ url_for('search', _external=True) }}" class="d-flex">
+                        {{ form.hidden_tag() }}
+                        <input class="form-control me-2 rounded-pill" type="search" placeholder="Search for a recipe" aria-label="Search" name="searched" style="height: 40px; width: 180px;"/>
+                        <button class="button rounded-pill" type="submit" style="background-color: #d7cba1; width: 100px; height: 40px; color: darkolivegreen; border: #d7cba1;">Search</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- This will prevent the collapsible panels collapsing when you click on a title link for recipe, cuisine, allergen. It will still collapse
+if clicked else where on the panel -->
+    <script src="/static/js/stopCollapse.js"></script>
+<!-- JS library to work with icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+</body>
+<style>
+    .nav-bar ul li a{
+    display: block;
+    color: #edffef;
+    font-size: 14px;
+    padding: 8px 25px;
+    transition: .2s;
+    margin: 0 5px;
+    text-decoration: none;
+}
+</style>
+
+</html>
