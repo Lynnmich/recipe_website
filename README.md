@@ -32,19 +32,16 @@ Pre-Designed Pages
 
 
 Installation
+
 Local development 🔧
-Clone the repository
 
-https://github.com/Lynnmich/recipe_website.git
+Clone the repository:   https://github.com/Lynnmich/recipe_website.git
 
 
-Cd in the project directory
+Cd in the project directory:   $ cd recipe_website/
 
-$ cd recipe_website/
 
-Start local dev server
-
-$ gunicorn app:app
+Start local dev server:   $ gunicorn app:app
 
 
 Deployment and hosting ⚙️
