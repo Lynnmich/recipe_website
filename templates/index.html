@@ -21,7 +21,7 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="{{ url_for('info', _external=True) }}">Info</a></li>
+                <li><a href="{{ url_for('info', _external=True) }}">Blog</a></li>
                 <li><a href="{{ url_for('recipes', _external=True) }}">Recipes</a></li>
                 {% if current_user.is_authenticated %}
                 <li class="nav-item">
