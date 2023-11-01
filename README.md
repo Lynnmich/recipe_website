@@ -8,7 +8,7 @@ Table of Contents
 
 Description
 
- Kenyan Food Recipes is a platform derived from the Kenyan Food Recipes Book curated by the FAO in collaboration with the Government of Kenya encouranging drlving into Kenya's traditional foods by showcasing the recipes prepared by various Kenyan communities
+Kenyan Food Recipes is a platform derived from the Kenyan Food Recipes Book curated by the FAO in collaboration with the Government of Kenya encouranging drlving into Kenya's traditional foods by showcasing the recipes prepared by various Kenyan communities
  
 
 The code covers modules for handling file operations, database interactions, user authentication and form handling.
@@ -31,6 +31,8 @@ Local development 🔧
 Clone the repository
 
 https://github.com/Lynnmich/recipe_website.git
+
+
 Cd in the project directory
 
 $ cd recipe_website/
@@ -38,5 +40,7 @@ $ cd recipe_website/
 Start local dev server
 
 $ gunicorn app:app
+
+
 Deployment and hosting ⚙️
 Deployed Site: [https://kenyan-food-recipes3.onrender.com/]
