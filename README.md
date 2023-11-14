@@ -8,7 +8,7 @@ Table of Contents
 
 Description
 
-Kenyan Food Recipes is a platform derived from the Kenyan Food Recipes Book curated by the FAO in collaboration with the Government of Kenya encouranging drlving into Kenya's traditional foods by showcasing the recipes prepared by various Kenyan communities
+Kenyan Food Recipes is a recipes website derived from the Kenyan Food Recipes Book curated by the FAO in collaboration with the Government of Kenya delving into Kenya's traditional foods by showcasing the recipes prepared by various Kenyan communities
  
 
 The code covers modules for handling file operations, database interactions, user authentication and form handling.
